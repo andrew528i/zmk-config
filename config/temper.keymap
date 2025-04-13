@@ -13,15 +13,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define Base 0
-#define Lower 1
-#define Raise 2
-#define Nav 3
-#define Mouse 4
-#define ModLower 5
-#define ModRaise 6
+// #define Base 0
+// #define Lower 1
+// #define Raise 2
+// #define Nav 3
+// #define Mouse 4
+// #define ModLower 5
+// #define ModRaise 6
 
-&sk { quick-release; };
+// &sk { quick-release; };
 
 &lt {
     flavor = "hold-preferred";
@@ -46,11 +46,11 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            require-prior-idle-ms = <110>;
+            require-prior-idle-ms = <90>;
             tapping-term-ms = <150>;
             quick-tap-ms = <130>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 33 34 35 10 11 12 13 21 22 23>;
+            hold-trigger-key-positions = < 5 6 7 8 9 19 25 26 27 28 29 30 31 33 34 35 13 21 22 23>; // 10 11 12 15 16 17 18
             global-quick-tap;
         };
 
@@ -70,18 +70,30 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            require-prior-idle-ms = <130>;
-            tapping-term-ms = <175>;
+            require-prior-idle-ms = <100>;
+            tapping-term-ms = <180>;
             quick-tap-ms = <150>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = < 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 34 35 16 17 18 19 5 6 7 8 9 >;
             global-quick-tap;
         };
 
-        hmrac: home_row_mod_right_alt_ctrl {
+        hmra: home_row_mod_right_alt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
+            require-prior-idle-ms = <130>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 34 35 16 17 18 19 5 6 7 8 9 >;
+            global-quick-tap;
+        };
+
+        hmrc: home_row_mod_right_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
             require-prior-idle-ms = <130>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
@@ -104,8 +116,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 
@@ -116,10 +128,21 @@
             label = "Base";
             display-name = "Base";
             bindings = <
-  &lt 4 Q       &kp W         &kp E         &kp R        &kp T        &kp Y        &kp U          &kp I           &kp O          &kp P
-  &hml LCTRL A  &hmls LALT S  &hml LSHFT D  &hml LGUI F  &kp G        &kp H        &hmrgs RGUI J  &hmrgs RSHFT K  &hmrac RALT L  &hmrac RCTRL SEMI
+  &lt 5 Q       &kp W         &kp E         &kp R        &kp T        &kp Y        &kp U          &kp I           &kp O          &kp P
+  &hml LCTRL A  &hmls LALT S  &hml LSHFT D  &hml LGUI F  &kp G        &kp H        &hmrgs RGUI J  &hmrgs RSHFT K  &hmra RALT L   &hmrc RCTRL SEMI
   &kp Z         &kp X         &kp C         &kp V        &kp B        &kp N        &kp M          &kp COMMA       &kp DOT        &kp FSLH
-                              &mo 5         &mo 1        &kp SPACE    &kp RET      &mo 2          &mo 6
+                              &mo 6         &mo 2        &kp SPACE    &kp RET      &mo 3          &mo 7
+            >;
+        };
+
+        colemak {
+            label = "Colemak";
+            display-name = "Colemak";
+            bindings = <
+  &lt 5 Q       &kp W        &kp F         &kp P        &kp B             &kp J        &kp L          &kp U           &kp Y          &kp SEMI
+  &hml LCTRL A  &hml LALT R  &hml LSHFT S  &hml LGUI T  &kp G             &kp K        &hmrgs RGUI N  &hmrgs RSHFT E  &hmra RALT I   &hmrc RCTRL O
+  &kp Z         &kp X        &kp C         &kp D        &kp V             &kp M        &kp H          &kp COMMA       &kp DOT        &kp FSLH
+                             &trans        &trans       &trans            &trans       &trans         &trans
             >;
         };
 
@@ -171,10 +194,10 @@
             label = "Mod Lower";
             display-name = "Mod Lower";
             bindings = <
-  &none       &none      &none          &none      &none         &none      &none     &none         &none            &none
-  &kp RCTRL   &kp LALT   &kp LSHFT      &kp LGUI   &none         &none      &none     &none         &none            &none
-  &none       &none      &none          &none      &bootloader   &none      &none     &none         &none            &none
-                         &trans         &to 1      &trans        &trans     &trans    &trans
+  &none       &none      &none          &none      &none           &none      &none     &none         &none            &none
+  &kp RCTRL   &kp LALT   &kp LSHFT      &kp LGUI   &none           &none      &none     &none         &none            &none
+  &none       &none      &none          &none      &bootloader     &none      &none     &none         &none            &none
+                         &trans         &trans     &trans          &trans     &trans    &trans
             >;
         };
 
@@ -185,18 +208,7 @@
   &none   &none   &none      &none      &none         &none       &none       &none      &none      &none
   &none   &none   &none      &none      &none         &none       &kp RGUI    &kp RSHFT  &kp RALT   &kp RCTRL
   &none   &none   &none      &none      &none         &bootloader &none       &none      &none      &none
-                  &trans     &trans     &trans        &trans      &to 7      &trans
-            >;
-        };
-
-        colemak {
-            label = "Colemak";
-            display-name = "Colemak";
-            bindings = <
-  &lt 4 Q       &kp W        &kp F         &kp P        &kp B             &kp J        &kp L          &kp U           &kp Y          &kp SEMI
-  &hml LCTRL A  &hml LALT R  &hml LSHFT S  &hml LGUI T  &kp G             &kp K        &hmrgs RGUI N  &hmrgs RSHFT E  &hmrac RALT I  &hmrac RCTRL O
-  &kp Z         &kp X        &kp C         &kp D        &kp V             &kp M        &kp H          &kp COMMA       &kp DOT        &kp FSLH
-                             &to 1         &mo 1        &kp SPACE         &kp RET      &mo 2          &mo 6
+                  &trans     &trans     &trans        &trans      &tog 2      &trans
             >;
         };
     };
