@@ -179,7 +179,7 @@
 
         colemak {
             label = "Colemak";
-            display-name = "Colemak"
+            display-name = "Colemak";
             bindings = <
   &lt 4 Q       &kp W        &kp F         &kp P        &kp B             &kp J        &kp L          &kp U           &kp Y          &kp SEMI
   &hml LCTRL A  &hml LALT R  &hml LSHFT S  &hml LGUI T  &kp G             &kp K        &hmrgs RGUI N  &hmrgs RSHFT E  &hmrac RALT I  &hmrac RCTRL O
