@@ -124,9 +124,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        qwerty_hrm {
-            label = "Qwerty HRM";
-            display-name = "Qwerty HRM";
+        base_hrm {
+            label = "Base HRM";
+            display-name = "Base HRM";
             bindings = <
   &lt 5 Q       &kp W         &kp E         &kp R        &kp T        &kp Y        &kp U          &kp I           &kp O          &kp P
   &hml LCTRL A  &hmls LALT S  &hml LSHFT D  &hml LGUI F  &kp G        &kp H        &hmrgs RGUI J  &hmrgs RSHFT K  &hmra RALT L   &hmrc RCTRL SEMI
@@ -139,10 +139,10 @@
             label = "Qwerty";
             display-name = "Qwerty";
             bindings = <
-  &lt 5 Q  &kp W  &kp E  &kp R  &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
-  &kp A    &kp S  &kp D  &kp F  &kp G        &kp H      &kp J    &kp K      &kp L    &kp SEMI
-  &kp Z    &kp X  &kp C  &kp V  &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp FSLH
-                  &mo 7  &mo 3  &kp SPACE    &kp RET    &mo 4    &mo 8
+  &lt 5 Q  &kp W  &kp E  &kp R   &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
+  &kp A    &kp S  &kp D  &kp F   &kp G        &kp H      &kp J    &kp K      &kp L    &kp SEMI
+  &kp Z    &kp X  &kp C  &kp V   &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp FSLH
+                  &tran  &trans  &trans       &trans     &trans   &trans
             >;
         };
 
