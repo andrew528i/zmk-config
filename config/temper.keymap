@@ -74,7 +74,7 @@
             tapping-term-ms = <140>;
             quick-tap-ms = <125>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < 5 6 7 9 10 11 13 19 12 13 25 26 27 28 29 30 31 33 34 35 13 >; // 10 12 15 16 17 18 21 22 23 8 9
+            hold-trigger-key-positions = < 5 6 7 9 10 11 19 12 13 25 26 27 28 29 30 31 33 34 35 >; // 10 12 15 16 17 18 21 22 23 8 9
             global-quick-tap;
         };
 
@@ -165,17 +165,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base {
-            label = "Base";
-            display-name = "Base";
-            bindings = <
-  &lt 6 Q       &kp W         &kp E          &kp R        &kp T         &kp Y        &kp U          &kp I           &kp O          &kp P
-  &hml LCTRL A  &hml LALT S   &hmls LSHFT D  &hml LGUI F  &kp G         &kp H        &hmrgs RGUI J  &hmrgs RSHFT K  &hmra RALT L   &hmrc RCTRL SEMI
-  &kp Z         &kp X         &kp C          &kp V        &kp B         &kp N        &kp M          &kp COMMA       &kp DOT        &kp FSLH
-                              &mo 7          &mo 3        &kp SPACE     &kp RET      &mo 4          &mo 8
-            >;
-        };
-
         qwerty {
             label = "Qwerty";
             display-name = "Qwerty";
@@ -183,6 +172,17 @@
   &lt 6 Q  &kp W  &kp E   &kp R   &kp T        &kp Y      &kp U    &kp I      &kp O    &kp P
   &kp A    &kp S  &kp D   &kp F   &kp G        &kp H      &kp J    &kp K      &kp L    &kp SEMI
   &kp Z    &kp X  &kp C   &kp V   &kp B        &kp N      &kp M    &kp COMMA  &kp DOT  &kp FSLH
+                              &mo 7          &mo 3        &kp SPACE     &kp RET      &mo 4          &mo 8
+            >;
+        };
+
+        base {
+            label = "Base";
+            display-name = "Base";
+            bindings = <
+  &lt 6 Q       &kp W         &kp E          &kp R        &kp T         &kp Y        &kp U          &kp I           &kp O          &kp P
+  &hml LCTRL A  &hml LALT S   &hmls LSHFT D  &hml LGUI F  &kp G         &kp H        &hmrgs RGUI J  &hmrgs RSHFT K  &hmra RALT L   &hmrc RCTRL SEMI
+  &kp Z         &kp X         &kp C          &kp V        &kp B         &kp N        &kp M          &kp COMMA       &kp DOT        &kp FSLH
                   &trans  &trans  &trans       &trans     &trans   &trans
             >;
         };
@@ -203,7 +203,8 @@
             display-name = "Lower";
             bindings = <
   &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT         &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR
-  &hrml LCTRL F1    &hrml LALT F2  &hrml LSHFT F3    &hrml LGUI F4    &kp F5            &kp F6     &hrmr RGUI UNDER  &hrmr RSHFT PLUS  &hrmr RALT LBRC  &hrmr RCTRL RBRC
+  // &hrml LCTRL F1    &hrml LALT F2  &hrml LSHFT F3    &hrml LGUI F4    &kp F5            &kp F6     &hrmr RGUI UNDER  &hrmr RSHFT PLUS  &hrmr RALT LBRC  &hrmr RCTRL RBRC
+  &kp F1    &kp F2  &kp F3    &kp F4    &kp F5            &kp F6     &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC
   &kp F7    &kp F8  &kp F9    &kp F10   &kp F11           &kp F12    &none      &none     &none     &none
                     &trans    &trans    &trans            &trans     &trans     &trans
             >;
@@ -214,8 +215,8 @@
             display-name = "Raise";
             bindings = <
   &kp N1        &kp N2        &kp N3          &kp N4         &kp N5       &kp N6    &kp N7      &kp N8      &kp N9     &kp N0
-  &kp LCTRL     &hrml LALT C_PREV    &hrml LSHFT C_PP        &hrml LGUI C_NEXT     &none        &none     &hrmr RGUI MINUS   &hrmr RSHFT EQUAL   &hrmr RALT LBKT   &hrmr RCTRL RBKT
-  // &none         &kp C_PREV    &kp C_PP        &kp C_NEXT     &none        &none     &kp MINUS   &kp EQUAL   &kp LBKT   &kp RBKT
+  // &kp LCTRL     &hrml LALT C_PREV    &hrml LSHFT C_PP        &hrml LGUI C_NEXT     &none        &none     &hrmr RGUI MINUS   &hrmr RSHFT EQUAL   &hrmr RALT LBKT   &hrmr RCTRL RBKT
+  &none         &kp C_PREV    &kp C_PP        &kp C_NEXT     &none        &none     &kp MINUS   &kp EQUAL   &kp LBKT   &kp RBKT
   &none         &none         &kp C_VOL_DN    &kp C_VOL_UP   &none        &none     &none       &none       &kp DQT    &kp SQT
                               &trans          &trans         &trans       &trans    &trans      &trans
             >;
