@@ -92,7 +92,7 @@
                         &kp LBKT   &kp RBKT    &kp EQUAL &kp MINUS   &trans       &trans  &kp RGUI  &kp RSHFT  &kp RALT  &kp RCTRL
       // &none   &kp C_PREV  &kp C_PP      &kp C_NEXT   &none      &none   &hrmr RGUI MINUS  &hrmr RSHFT EQUAL  &hrmr RALT LBKT  &hrmr RCTRL RBKT
       // &none   &kp C_PREV  &kp C_PP      &kp C_NEXT   &none      &none   &kp MINUS   &kp EQUAL  &kp LBKT  &kp RBKT
-      &kp GRAVE  &kp C_PREV  &kp C_PP  &kp C_NEXT  &none        &none   &none     &none      &kp DQT   &kp SQT
+      &kp GRAVE  &kp C_PREV  &kp C_PP  &kp C_NEXT  &kp F15        &kp F16   &kp F17     &kp F18      &kp DQT   &kp SQT
                                                                                                    &trans &trans      &trans       &tog COLEMAK  &trans &trans
                         >;
                 };
